@@ -1,4 +1,19 @@
 .pizza-container {
     border-color: red;
     border-style: solid;
+    background-color: rgba(255, 255, 255, .8);
+
+    width: 25vw;
+    min-width: 200px;
+    padding: 1rem;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    aspect-ratio: 1/1;
 }

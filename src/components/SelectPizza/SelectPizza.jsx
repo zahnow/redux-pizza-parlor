@@ -1,3 +1,4 @@
+import './SelectPizza.css';
 import PizzaDisplay from "./PizzaDisplay";
 import { useSelector } from 'react-redux';
 
@@ -7,7 +8,7 @@ function SelectPizza() {
 
     return (
         <>
-            <div>
+            <div className="pizza-list-container">
                 {pizzas.map(pizza =>
                     <PizzaDisplay key={pizza.id} pizza={pizza} />)}
             </div>
