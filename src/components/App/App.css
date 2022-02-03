@@ -1,11 +1,19 @@
 .App {
   text-align: center;
+  background-color: white;
+}
+
+.main{
   background-image: url('pizzaBackground.jpg');
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  min-height: 85vh;
+  margin-bottom: 5%;
 }
 
 .App-header {
   background-color: #222;
-  height: 70px;
   padding: 20px;
   color: white;
   margin-bottom: 20px;
@@ -13,4 +21,35 @@
 
 .App-title {
   font-size: 2em;
+}
+
+button {
+  width: 100%;
+  font-size: x-large;
+  background-color: transparent;
+  border:none;
+}
+
+.button-container{
+  background-color: red;
+}
+
+.next-button {
+  text-align: right;
+}
+
+form {
+  margin-left: 150px;
+  margin-right: 150px;
+  border: 2px solid red;
+}
+
+.blur {
+  background-color: rgba(255, 255, 255, 0.363);
+  backdrop-filter: blur(5px);
+}
+
+.nice-table {
+  width: 80%;
+  background-color: white;
 }

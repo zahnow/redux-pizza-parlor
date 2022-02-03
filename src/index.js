@@ -20,8 +20,9 @@ const lineItemReducer = (state = [], action) => {
         console.log('Pizza id:', pizza.id);
         return [...state, {
             id: pizza.id,
-             quantity: 1,
-            price: pizza.price}];
+            quantity: 1,
+            price: pizza.price,
+            name: pizza.name}];
     } else if (action.type === 'REMOVE_LINE_ITEM') {
         const pizza = action.payload.pizza;
         console.log('Removing line item');
@@ -33,10 +34,19 @@ const lineItemReducer = (state = [], action) => {
     return state;
 }
 
+const customerInputReducer = (state= {}, action) => {
+    if (action.type === 'SET_CUSTOMER') {
+        console.log('Payload for SET_CUSTOMER:', action.payload);
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
       pizzaReducer,
-      lineItemReducer
+      lineItemReducer,
+      customerInputReducer
     }),
     applyMiddleware(logger));
 

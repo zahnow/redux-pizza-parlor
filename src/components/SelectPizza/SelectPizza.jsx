@@ -1,10 +1,16 @@
 import './SelectPizza.css';
 import PizzaDisplay from "./PizzaDisplay";
 import { useSelector } from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function SelectPizza() {
     const pizzas = useSelector(store => store.pizzaReducer);
+    const history = useHistory();
 
+    function nextPage() {
+        console.log('In nextPage');
+        history.push('/customerInfo')
+    }
 
     return (
         <>
@@ -12,7 +18,7 @@ function SelectPizza() {
                 {pizzas.map(pizza =>
                     <PizzaDisplay key={pizza.id} pizza={pizza} />)}
             </div>
-            <button>Next</button>
+            <button onClick={nextPage}>Next</button>
         </>
     );
 }

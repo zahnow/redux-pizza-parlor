@@ -3,8 +3,11 @@ import axios from 'axios';
 import './App.css';
 import {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import SelectPizza from '../SelectPizza/SelectPizza';
-
+import CustomerInfo from '../CustomerInfo/CustomerInfo';
+import Checkout from '../Checkout/Checkout';
+import OrderTotal from '../OrderTotal/OrderTotal';
 
 
 function App() {
@@ -31,10 +34,26 @@ function App() {
 
   return (
     <div className='App'>
+      <div className='main'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
+        <p>🛒 $<OrderTotal /></p>
       </header>
-      <SelectPizza />
+      <Router>
+	      <Route path="/" exact>
+          <SelectPizza />
+	      </Route>
+        <Route path="/customerInfo">
+          <CustomerInfo />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
+        </Route>
+        <Route path="/admin">
+
+        </Route>
+      </Router>
+      </div>
     </div>
   );
 }
