@@ -2,12 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import SelectPizza from '../SelectPizza/SelectPizza';
 
 
 
 function App() {
   const dispatch = useDispatch();
+  const pizzas = useSelector(store => store.pizzaReducer);
+
   function fetchPizzas() {
     axios.get('/api/pizza')
       .then((response) => {
@@ -19,7 +22,6 @@ function App() {
       })
       .catch((error) => {
         console.log('Error getting pizzas:', error);
-
       })
   }
 
@@ -32,11 +34,8 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-  
       <img src='images/pizza_photo.png' />
-
-      <p>Pizza is great.</p>
-  
+      <SelectPizza />
     </div>
   );
 }
