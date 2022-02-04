@@ -3,6 +3,12 @@
   background-color: black;
 }
 
+.App-header p{
+  font-size: xx-large;
+  text-align: right;
+  margin-right:10%;
+}
+
 body{
   background-color: black;
 }
@@ -14,8 +20,8 @@ body{
 }
 
 .main{
-  background-image: url('pizzaBackground.jpg');
   /* background-color: gray; */
+  background-image: url('pizzaBackground.jpg');
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 5%;
@@ -25,12 +31,15 @@ body{
 
 .App-header {
   background: #1E9600;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FF0000, #FFF, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FF0000, #FFF, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: -webkit-linear-gradient(to right, #FF0000, rgba(255, 255, 255, 0), #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF0000, rgba(255, 255, 255, 0), #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 20px;
   color: black;
   margin-bottom: 20px;
+}
+
+.App-header img:hover {
+  animation: rotateLogo 1s linear infinite;
 }
 
 .App-title {
@@ -39,7 +48,8 @@ body{
 
 input {
   padding: .5rem;
-  width: 30%;
+  margin: .25rem;
+  width: 100%;
 }
 
 button {
@@ -81,6 +91,8 @@ form {
   margin-left: 10%;
   border-color: red;
   border-style: solid;
+
+  animation: italia 2s infinite alternate;
 }
 
 thead {
@@ -113,7 +125,11 @@ button {
 }
 
 button:hover {
+  background-color: green;
   color: white;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🤌</text></svg>")
+  16 0,
+auto;
 }
 
 .centered {
@@ -125,4 +141,36 @@ button:hover {
 
 #logo {
   height: 200px;
+}
+
+.hflex {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid rgb(186, 102, 255);
+}
+
+@keyframes italia {
+  0% {
+    background-color: red;
+    transform: rotate(10deg) scale(50%);
+  }
+  25% {
+    transform: scale(250%);
+  }
+  75% {
+    transform: scale(125%);
+  }
+  100% {
+    background-color: green;
+    transform: rotate(-10deg) scale(175%);;
+  }
+}
+
+@keyframes rotateLogo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

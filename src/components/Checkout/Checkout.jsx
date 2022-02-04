@@ -26,6 +26,8 @@ function Checkout () {
             pizzas: lineItems 
         }).then((response) => {
             dispatch({type: 'RESET_LINE_ITEMS'});
+            let audio = new Audio("./sounds/pizza.mp3");
+            audio.play()
             history.push('/');
         }).catch((error) => {
             console.warn(error);
