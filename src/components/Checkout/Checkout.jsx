@@ -1,4 +1,4 @@
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import OrderTotal from '../OrderTotal/OrderTotal';
 import CheckoutTableRow from './CheckoutTableRow';
@@ -8,6 +8,7 @@ function Checkout () {
     const lineItems = useSelector(store => store.lineItemReducer);
     const customer = useSelector(store => store.customerInputReducer);
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const orderTotal = lineItems.reduce((prev, current) => prev + Number(current.price), 0)
 
@@ -24,6 +25,7 @@ function Checkout () {
             total: orderTotal,
             pizzas: lineItems 
         }).then((response) => {
+            dispatch({type: 'RESET_LINE_ITEMS'});
             history.push('/');
         }).catch((error) => {
             console.warn(error);

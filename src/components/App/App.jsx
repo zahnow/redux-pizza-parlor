@@ -8,6 +8,7 @@ import SelectPizza from '../SelectPizza/SelectPizza';
 import CustomerInfo from '../CustomerInfo/CustomerInfo';
 import Checkout from '../Checkout/Checkout';
 import OrderTotal from '../OrderTotal/OrderTotal';
+import Admin from '../Admin/Admin';
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
           <Checkout />
         </Route>
         <Route path="/admin">
-
+          <Admin />
         </Route>
       </Router>
       </div>

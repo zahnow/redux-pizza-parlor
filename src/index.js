@@ -30,6 +30,8 @@ const lineItemReducer = (state = [], action) => {
         return state.filter((lineItem) => {
             return lineItem.id !== pizza.id;
         });
+    } else if (action.type === 'RESET_LINE_ITEMS') {
+        return state = [];
     }
     return state;
 }
@@ -42,11 +44,19 @@ const customerInputReducer = (state= {}, action) => {
     return state;
 }
 
+const adminListReducer = (state=[], action) => {
+    if (action.type === 'SET_ADMIN') {
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
       pizzaReducer,
       lineItemReducer,
-      customerInputReducer
+      customerInputReducer,
+      adminListReducer
     }),
     applyMiddleware(logger));
 

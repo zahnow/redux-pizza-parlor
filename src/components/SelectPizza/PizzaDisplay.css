@@ -15,7 +15,8 @@
 
 .img-container img {
     max-width: 100%;
-    aspect-ratio: 1/1;
+    
+    height: 60%;
 }
 
 .description-container {

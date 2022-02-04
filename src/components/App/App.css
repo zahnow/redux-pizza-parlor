@@ -3,8 +3,15 @@
   background-color: white;
 }
 
+.App:hover{
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍕</text></svg>")
+      16 0,
+    auto;
+}
+
 .main{
   background-image: url('pizzaBackground.jpg');
+  /* background-color: gray; */
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 5%;
@@ -13,14 +20,22 @@
 }
 
 .App-header {
-  background-color: #222;
+  background: #1E9600;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF0000, #FFF, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF0000, #FFF, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   padding: 20px;
-  color: white;
+  color: black;
   margin-bottom: 20px;
 }
 
 .App-title {
   font-size: 2em;
+}
+
+input {
+  padding: .5rem;
+  width: 30%;
 }
 
 button {
@@ -50,6 +65,56 @@ form {
 }
 
 .nice-table {
+  margin-top: 0px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  width: 100%;
+}
+
+.primary-div {
+  border-radius: 20px;
   width: 80%;
-  background-color: white;
+  margin-left: 10%;
+  border-color: red;
+  border-style: solid;
+}
+
+thead {
+  background: #1E9600;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF0000, #FFF, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF0000, #FFF, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+tr:nth-child(even) {
+  background-color: rgba(157, 240, 255, 0.6);
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  width: 100%;
+  background-color: red;
+}
+
+button {
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  width: 100%;
+  background-color: red;
+}
+
+button:hover {
+  color: white;
+}
+
+.centered {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
