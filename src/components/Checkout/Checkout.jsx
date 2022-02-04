@@ -33,8 +33,8 @@ function Checkout () {
     }
 
     return (
-        <div className='blur'>
-            <h2>Checkout</h2>
+        <div className='primary-div blur'>
+            <h2>Confirm Your Order</h2>
             <div>
             <p>{customer.name}</p>
             <p>{customer.street_address}</p>
@@ -51,8 +51,8 @@ function Checkout () {
                     {lineItems.map(lineItem => <CheckoutTableRow key={lineItem.id} lineItem={lineItem} />)}
                 </tbody>
             </table>
-            <OrderTotal />
-            <button onClick={checkout}>Checkout</button>
+            <h2>Order Total: $<OrderTotal /></h2>
+            <button onClick={checkout}>Submit</button>
         </div>
     )
 }

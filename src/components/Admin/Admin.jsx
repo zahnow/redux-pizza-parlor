@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
 
 function Admin() {
     const dispatch = useDispatch();
@@ -29,7 +30,7 @@ function Admin() {
                     {adminList.map(order =>
                         <tr>
                             <td>{order.customer_name}</td>
-                            <td>{order.time}</td>
+                            <td>{moment(order.time).format('lll')}</td>
                             <td>{order.type}</td>
                             <td>{order.total}</td>
                         </tr>)}

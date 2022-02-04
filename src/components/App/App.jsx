@@ -3,13 +3,13 @@ import axios from 'axios';
 import './App.css';
 import {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import SelectPizza from '../SelectPizza/SelectPizza';
 import CustomerInfo from '../CustomerInfo/CustomerInfo';
 import Checkout from '../Checkout/Checkout';
 import OrderTotal from '../OrderTotal/OrderTotal';
 import Admin from '../Admin/Admin';
-
+import logo from './clipart226713.png';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,12 +35,13 @@ function App() {
 
   return (
     <div className='App'>
+      <Router>
       <div className='main'>
       <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
+        <a href="/"><img id="logo" src={logo} /></a>
+        
         <p>🛒 $<OrderTotal /></p>
       </header>
-      <Router>
 	      <Route path="/" exact>
           <SelectPizza />
 	      </Route>
@@ -53,8 +54,8 @@ function App() {
         <Route path="/admin">
           <Admin />
         </Route>
-      </Router>
       </div>
+      </Router>
     </div>
   );
 }
